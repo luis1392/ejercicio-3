@@ -1,5 +1,9 @@
 const express = require("express");
-
+const cors = require('cors');
+var corsOptions = {
+    origin: '*', // Reemplazar con dominio
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 require("dotenv").config();
 
 const app = express();
@@ -11,6 +15,7 @@ app.use(
     extended: true,
   })
 );
+app.use(cors(corsOptions));
 
 // import routes
 const apiRoutes = require("./routes/api.routes");

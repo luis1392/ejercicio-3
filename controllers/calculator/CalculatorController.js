@@ -1,8 +1,8 @@
 const Joi = require("joi");
-let result = 0;
+let result = 10;
 
 const schemaRegister = Joi.object({
-  value: Joi.number().min(6).required().messages({
+  value: Joi.number().required().messages({
     "any.required": `El resultado es requerido`,
     "number.base": `El resultado debe ser númerico`,
     "string.empty": `El resultado es requerido`,
